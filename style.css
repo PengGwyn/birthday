@@ -17,19 +17,26 @@ h1 {
 }
 
 .giftCap {
-    background-image: linear-gradient(rgb(126, 0, 0), rgb(206, 10, 10));
+    transform: translateY(55px);
+    background-image: url('giftCap.png');
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    /* background-image: linear-gradient(rgb(126, 0, 0), rgb(206, 10, 10)); */
     width: 380px;
     height: 80px;
-    border: 1px solid #FF8484FF;
-    box-shadow: 0px 3px 10px 1px #ff8484;
+    /* border: 1px solid #FF8484FF; */
+    /* box-shadow: 0px 3px 10px 1px #ff8484; */
 }
 
 .giftBox {
-    background-image: linear-gradient(rgb(206, 10, 10), rgb(178, 2, 2));
+    background-image: url('giftBox.png');
+    background-size: cover;
+    /* background-image: linear-gradient(rgb(206, 10, 10), rgb(178, 2, 2)); */
     width: 350px;
     height: 350px;
-    border: 1px solid #FF8484FF;
-    box-shadow: 0px 0px 10px 3px #ff8484;
+    /* border: 1px solid #FF8484FF; */
+    /* box-shadow: 0px 0px 10px 3px #ff8484; */
 }
 
 .openBtnContainer {
@@ -80,10 +87,10 @@ h1 {
 
 @keyframes openBox {
     0%, 100% {
-        transform: translateY(0px);
+        transform: translateY(55px);
     }
     25% {
-        transform: translateY(-10px);
+        transform: translateY(-25px);
     }
     60% {
         transform: translateY(-25px);
@@ -140,37 +147,39 @@ h1 {
 .animation-delay_on_text_pop_up {
     animation-delay: .7s;
 }
-
+/* desktop view */
 @media only screen and (min-width: 320px) {
     .giftcontainer {
-        transform: translateY(280px);
+        transform: translateY(150px);
         margin-bottom: 0px;
     }
 
     .giftBox {
-        width: 230px;
-        height: 230px;
+        width: 350px;
+        height: 350px;
     }
 
     .giftCap {
-        width: 250px;
-        height: 50px;
+        width: 380px;
+        height: 168px;
+        background-size: 380px;
     }
 
     .openBtn {
-        font-size: 18px;
+        font-size: 15px;
         padding: 13px 35px;
-        margin-top: 320px;
+        margin-top: 200px;
         margin-bottom: 0;
+        font-size: 28px;
         transition: margin-top 0.15s;
     }
 
     .openBtn:hover {
-        margin-top: 315px;
+        margin-top: 190px;
     }
 
     .openBtn:active {
-        margin-top: 335px;
+        margin-top: 225px;
     }
 
     .giftTextCard {
@@ -179,7 +188,7 @@ h1 {
 
     .content {
         font-size: 18px;
-        padding: 0 100px;
+        padding: 0 250px;
         border-radius: 10px;
     }
 
@@ -195,15 +204,15 @@ h1 {
         45% {
             opacity: 1;
             transform: translateY(-1000px);
-            font-size: 8px;
+            font-size: 13px;
         }
         60% {
-            font-size: 25px;
+            font-size: 30px;
         }
         80%, 100% {
             opacity: 1;
             transform: translateY(0px);
-            font-size: 18px;
+            font-size: 23px;
         }
     }
 
@@ -213,8 +222,8 @@ h1 {
         animation-fill-mode: forwards;
     }
 }
-
-@media only screen and (min-width: 512px) {
+/* 
+@media only screen and (max-width: 512px) {
     .giftcontainer {
         transform: translateY(225px);
         margin-bottom: 0px;
@@ -285,35 +294,77 @@ h1 {
         animation-duration: 1s;
         animation-fill-mode: forwards;
     }
-}
+} */
 
-@media only screen and (min-width: 1024px) {
+/* Mobile view */
+@media only screen and (max-width: 1024px) {
     .giftcontainer {
-        transform: translateY(280px);
+        transform: translateY(300px);
         margin-bottom: 3%;
     }
 
     .giftBox {
-        width: 320px;
-        height: 320px;
+        width: 550px;
+        height: 550px;
     }
 
     .giftCap {
-        width: 350px;
-        height: 80px;
+        width: 600px;
+        height: 300px;
+        background-size: 600px;
     }
 
     .openBtn {
-        margin-top: 250px;
-        margin-bottom: 0;
+        margin-top: 10px;
+        font-size: 75px;
+        padding: 35px 130px;
         transition: margin-top 0.15s;
     }
 
     .openBtn:hover {
-        margin-top: 245px;
+        margin-top: 530px;
     }
 
     .openBtn:active {
-        margin-top: 280px;
+        margin-top: 580px;
+    }
+
+    .content {
+        font-size: 80px;
+        padding: 0 300px;
+        border-radius: 10px;
+        overflow-wrap: anywhere;
+        max-width: 800px;
+        margin-top: 55px;
+    }
+
+    @keyframes showText {
+        0% {
+            opacity: 0;
+            transform: translateY(-1100px);
+        }
+        25% {
+            opacity: 1;
+            font-size: 35px;
+        }
+        45% {
+            opacity: 1;
+            transform: translateY(-1800px);
+            font-size: 40x;
+        }
+        60% {
+            font-size: 35px;
+        }
+        80%, 100% {
+            opacity: 1;
+            transform: translateY(0px);
+            font-size: 30px;
+        }
+    }
+
+    .animateShowText {
+        animation-name: showText;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
     }
 }
