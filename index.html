@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Birthday Gift</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="giftcontainer">
+        <div id="gCap" class="giftCap"></div>
+        <div class="giftBox"></div>
+    </div>
+
+    <div class="openBtnContainer">
+        <button class="openBtn" onclick="onOpenGift()">Open</button>
+    </div>
+
+    <div class="giftTextCard">
+        <div id="contentTxt" class="content">
+            <h1>I miss her!</h1>
+        </div>
+    </div>
+
+    <script>
+        var gift_cap
+        var contentText
+        var textContent
+        var messages =[
+          'I miss her'
+        ]
+
+        function onPageLoad() {
+            gift_cap = document.getElementById('gCap')
+            contentText = document.getElementById('contentTxt')
+            textContent = document.querySelector('.giftTextCard #contentTxt h1')
+            contentText.style.opacity = '0'
+        }
+        function onOpenGift() {
+            gift_cap.classList.remove('animateOpenBox');
+            void gift_cap.offsetWidth; // Reset animation
+            gift_cap.classList.add('animateOpenBox')
+
+            var min = 0
+            var max = messages.length
+            var random = Math.floor(Math.random() * (max - min) + min)
+            console.log(random)
+            textContent.innerText = messages[random]
+
+            contentText.classList.remove('animateShowText')
+            void contentText.offsetWidth;
+            contentText.classList.add('animateShowText')
+            contentText.classList.add('animation-delay_on_text_pop_up')
+        }
+        window.onload = onPageLoad()
+    </script>
+</body>
+</html>
