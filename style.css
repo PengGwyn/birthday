@@ -315,18 +315,18 @@ h1 {
     }
 
     .openBtn {
-        margin-top: 10px;
+        margin-top: 350px;
         font-size: 75px;
         padding: 35px 130px;
         transition: margin-top 0.15s;
     }
 
     .openBtn:hover {
-        margin-top: 530px;
+        margin-top: 335px;
     }
 
     .openBtn:active {
-        margin-top: 580px;
+        margin-top: 375px;
     }
 
     .content {
