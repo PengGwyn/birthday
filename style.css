@@ -289,21 +289,31 @@ h1 {
 
 @media only screen and (min-width: 1024px) {
     .giftcontainer {
-        transform: translateY(180px);
+        transform: translateY(280px);
         margin-bottom: 3%;
     }
 
+    .giftBox {
+        width: 320px;
+        height: 320px;
+    }
+
+    .giftCap {
+        width: 350px;
+        height: 80px;
+    }
+
     .openBtn {
-        margin-top: 180px;
+        margin-top: 250px;
         margin-bottom: 0;
         transition: margin-top 0.15s;
     }
 
     .openBtn:hover {
-        margin-top: 175px;
+        margin-top: 245px;
     }
 
     .openBtn:active {
-        margin-top: 200px;
+        margin-top: 280px;
     }
 }
