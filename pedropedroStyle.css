@@ -13,6 +13,17 @@
     opacity: 0;
 }
 
+.pedroHouse {
+    /* animation-name: resizePedro;
+    animation-duration: 1s;
+    transform-origin: center; */
+    /* animation-delay: 1.8s; */
+    /* animation-iteration-count: infinite;
+    animation-timing-function: linear; */
+
+    /* animation-iteration-count: infinite;
+    animation-timing-function: linear; */
+}
 .pedroWink {
     position: absolute;
     width: 510px;
@@ -20,44 +31,52 @@
     border: 1px solid white;
     border-radius: 50%;
 
-    /* animation-name: rotatePedro, resizePedro;
-    animation-duration: 1.5s, 0.4s;
-    animation-delay: 0s, 5.10s; */
-
-    animation-name: rotatePedro;
+    /* animation-name: rotatePedro;
     animation-duration: 1.5s;
-
+    animation-delay: 0s;
     animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    animation-timing-function: linear; */
+
+    animation: 
+        rotatePedro 1.5s linear infinite,
+        resizePedro 0.4s linear infinite;
+
     background-image: url('racoon.png');
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 @keyframes rotatePedro {
-    from {
-        transform: rotate(0deg);
+    0% {
+        rotate: 0deg;
+        /* transform: rotate(0deg); */
     }
-    to {
-        transform: rotate(360deg);
+    100% {
+        rotate: 360deg;
+        /* transform: rotate(360deg); */
     }
 }
 
 @keyframes resizePedro {
-    0%, 45%, 55%, 100% {
-        width: 510px;
-        height: 510px;
+    0%, 45%, 73% {
+        scale: 1;
+        /* width: 510px;
+        height: 510px; */
     }
 
     50% {
-        width: 530px;
-        height: 530px;
+        /* width: 580px;
+        height: 580px; */
+        scale: 1.3;
+    }
+    100% {
+        scale: 1;
     }
 }
 
 @keyframes getPedroFromGift {
     0% {
-        opacity: 0;
+        opacity: 1;
         transform: translateY(-500px);
     }
     30% {
@@ -81,10 +100,20 @@
     animation-fill-mode: forwards;
 }
 
+.rotatePedro {
+    animation-name: rotatePedro;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
 .animateBeatsPedro-with-delay {
     animation-name: resizePedro;
     animation-duration: 0.4s;
-    animation-delay: 1.8s;
+    /* animation-delay: 1.8s; */
+    
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 
 /* desktop view */
@@ -124,31 +153,9 @@
         }
     }
 
-    @keyframes resizePedro {
-        0%, 45%, 55%, 100% {
-            width: 700px;
-            height: 700px;
-        }
-    
-        50% {
-            width: 750px;
-            height: 750px;
-        }
-    }
-
     .animatePedro {
         animation-name: getPedroFromGift;
         animation-duration: 1s;
         animation-fill-mode: forwards;
-    }
-
-    .animateBeatsPedro-with-delay {
-        animation-name: resizePedro;
-        animation-duration: 0.4s;
-        /* animation-delay: 1.8s; */
-        animation-fill-mode: forwards;
-
-        animation-iteration-count: infinite;
-        animation-timing-function: linear;
     }
 }
