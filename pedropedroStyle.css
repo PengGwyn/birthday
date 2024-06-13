@@ -20,9 +20,12 @@
     border: 1px solid white;
     border-radius: 50%;
 
-    animation-name: rotatePedro, resizePedro;
+    /* animation-name: rotatePedro, resizePedro;
     animation-duration: 1.5s, 0.4s;
-    animation-delay: 0s, 5.10s;
+    animation-delay: 0s, 5.10s; */
+
+    animation-name: rotatePedro;
+    animation-duration: 1.5s;
 
     animation-iteration-count: infinite;
     animation-timing-function: linear;
@@ -142,6 +145,10 @@
     .animateBeatsPedro-with-delay {
         animation-name: resizePedro;
         animation-duration: 0.4s;
-        animation-delay: 1.8s;
+        /* animation-delay: 1.8s; */
+        animation-fill-mode: forwards;
+
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
     }
 }
