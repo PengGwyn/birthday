@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Birthday Gift</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pedropedroStyle.css">
+    <link rel="stylesheet" href="animation-disappear-elemts.css">
     <style>
 
     </style>
@@ -11,7 +13,7 @@
 <body>
     <div class="giftcontainer">
         <div id="gCap" class="giftCap"></div>
-        <div class="giftBox"></div>
+        <div id="gBox" class="giftBox"></div>
     </div>
 
     <div class="openBtnContainer">
@@ -24,10 +26,20 @@
         </div>
     </div>
 
+    <div class="pedroHouse">
+        <div id="pedro" class="pedroContainer">
+            <div class="pedroWink"></div>
+        </div>
+    </div>
+
     <script>
         var gift_cap
+        var gift_box
         var contentText
         var textContent
+
+        var pedro
+
         var messages =[
           'I miss you!',
           "I wish, I'm with you today.",
@@ -37,25 +49,46 @@
 
         function onPageLoad() {
             gift_cap = document.getElementById('gCap')
+            gift_box = document.getElementById('gBox')
+            pedro = document.getElementById("pedro")
             contentText = document.getElementById('contentTxt')
             textContent = document.querySelector('.giftTextCard #contentTxt h1')
             contentText.style.opacity = '0'
         }
         function onOpenGift() {
+            var audio = new Audio('pedropedro.mp3')
+            audio.loop = true
+            audio.play()
+
             gift_cap.classList.remove('animateOpenBox');
             void gift_cap.offsetWidth; // Reset animation
             gift_cap.classList.add('animateOpenBox')
 
-            var min = 0
-            var max = messages.length
-            var random = Math.floor(Math.random() * (max - min) + min)
-            console.log(random)
-            // textContent.innerText = messages[random]
+            gift_box.classList.remove('animateOpenBoxMoveDown');
+            void gift_box.offsetWidth; // Reset animation
+            gift_box.classList.add('animateOpenBoxMoveDown')
 
-            contentText.classList.remove('animateShowText')
-            void contentText.offsetWidth;
-            contentText.classList.add('animateShowText')
-            contentText.classList.add('animation-delay_on_text_pop_up')
+            // show message
+
+            // var min = 0
+            // var max = messages.length
+            // var random = Math.floor(Math.random() * (max - min) + min)
+            // console.log(random)
+            // // textContent.innerText = messages[random]
+
+            // contentText.classList.remove('animateShowText')
+            // void contentText.offsetWidth;
+            // contentText.classList.add('animateShowText')
+            // contentText.classList.add('animation-delay_on_text_pop_up')
+
+            // show pedro
+            pedro.classList.remove('animatePedro')
+            pedro.classList.add('animation-delay_on_text_pop_up')
+            // pedro.classList.add('animateBeatsPedro-with-delay')
+            void pedro.offsetWidth
+            pedro.classList.add('animatePedro')
+            pedro.classList.add('animation-delay_on_text_pop_up')
+            // pedro.classList.add('animateBeatsPedro-with-delay')
         }
         window.onload = onPageLoad()
     </script>
