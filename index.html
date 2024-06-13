@@ -17,7 +17,7 @@
     </div>
 
     <div class="openBtnContainer">
-        <button class="openBtn" onclick="onOpenGift()">Open</button>
+        <button id="open" class="openBtn" onclick="onOpenGift()">Open</button>
     </div>
 
     <div class="giftTextCard">
@@ -41,6 +41,8 @@
         var pedro
         var pedroMain
 
+        var openBtn
+
         var messages =[
           'I miss you!',
           "I wish, I'm with you today.",
@@ -49,6 +51,7 @@
         ]
 
         function onPageLoad() {
+            openBtn = document.getElementById('open')
             gift_cap = document.getElementById('gCap')
             gift_box = document.getElementById('gBox')
             pedro = document.getElementById("pedro")
@@ -59,12 +62,25 @@
         }
         function onOpenGift() {
             var audio = new Audio('pedropedro.mp3')
-            audio.loop = true
+            //audio.loop = true
             audio.play()
+
+            audio.addEventListener('ended', function() {
+                console.log('merry meow meow')
+                pedroMain.classList.remove('pedroWink');
+                pedroMain.classList.add('animateDisappear')
+
+                openBtn.disabled = true
+                openBtn.classList.remove('animateDisappear')
+                openBtn.classList.add('animateAppear')
+            })
 
             gift_cap.classList.remove('animateOpenBox');
             void gift_cap.offsetWidth; // Reset animation
             gift_cap.classList.add('animateOpenBox')
+
+            openBtn.disabled = true
+            openBtn.classList.add('animateDisappear')
 
             gift_box.classList.remove('animateOpenBoxMoveDown');
             void gift_box.offsetWidth; // Reset animation

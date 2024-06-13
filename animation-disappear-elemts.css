@@ -1,5 +1,5 @@
 @keyframes disappear {
-    0%, 90% {
+    0% {
         opacity: 1;
     }
     100% {
@@ -7,8 +7,23 @@
     }
 }
 
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 .animateDisappear {
     animation-name: disappear;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.animateAppear {
+    animation-name: appear;
     animation-duration: 1s;
     animation-fill-mode: forwards;
 }
