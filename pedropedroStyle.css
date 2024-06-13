@@ -38,8 +38,8 @@
     animation-timing-function: linear; */
 
     animation: 
-        rotatePedro 1.5s linear infinite,
-        resizePedro 0.4s linear infinite;
+        rotatePedro 1.5s linear infinite 0s,
+        resizePedro 0.4s linear infinite 4.83s;
 
     background-image: url('racoon.png');
     background-repeat: no-repeat;
